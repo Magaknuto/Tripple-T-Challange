@@ -1,8 +1,11 @@
-import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import gameReducer from '../features/game/gameSlice';
+
+import multi from 'redux-multi'
 
 export default configureStore({
   reducer: {
-    counter: counterReducer,
+    game: gameReducer,
   },
+  middleware: [multi, ...getDefaultMiddleware()]
 });
