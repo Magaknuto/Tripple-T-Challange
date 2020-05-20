@@ -1,0 +1,92 @@
+.game-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.info-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    height: auto;
+    background: #4795B5;
+}
+
+.player-pic {
+    margin: 0.51rem;
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 10rem;
+    height: 10rem;
+    background: #4795B5;
+    border-radius: 10px;
+}
+
+.player-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.player-info p {
+    font-size: 2rem;
+    color: white;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+.player-pic-active {
+    background: #00e300;
+}
+
+.player-pic img {
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 9rem;
+    height: 9rem;
+}
+
+.game-board {
+    align-self: center;
+}
+
+@media only screen and (max-width: 800px) {
+    .game-area {
+        flex-direction: column;
+        height: 100%;
+        align-items: flex-start;
+    }
+
+    .info-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        width: auto;
+        height: auto;
+        justify-content: left;
+    }
+
+    .player-pic {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .player-pic img {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .player-info p {
+        font-size: 1.2rem;
+        color: white;
+    }
+}
