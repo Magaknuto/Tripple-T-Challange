@@ -14,15 +14,15 @@ function BoardButton(props) {
             onClick={props.onClick}
             disabled={(!props.active || props.value)}
         >
-            {R.defaultTo(`\xa0\xa0\xa0`, props.value)}
+            {R.defaultTo('\xa0\xa0\xa0', props.value)}
         </Button>
     )
 }
 
 BoardButton.propTypes = {
-    value: PropTypes.string.isRequired,
+    value: PropTypes.string,
     active: PropTypes.bool.isRequired,
-    onCLick: PropTypes.func.isRequired,
+    onClick: PropTypes.func.isRequired,
 }
 
 export default BoardButton;

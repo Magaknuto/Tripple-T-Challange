@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import makeMove from '../../features/game/gameActions'
-import { getSquares } from '../../features/game/gameSlice'
-import Button from './Button'
+import Button from '../../Components/Game/Button'
 
-import { calculateBorders } from './utils'
+import { calculateBorders } from '../../Components/Game/utils'
 
 class Section extends Component {
     constructor(props) {
@@ -18,7 +17,7 @@ class Section extends Component {
     render() {
         const buttons = this.props.buttons.map((btn, idx) =>
             <Button
-                onClick={() => this.props.makeMove(this.props.sectionId, idx, this.props.player)}
+                onClick={() => this.props.makeMove(this.props.sectionId, idx, this.props.player, 'player')}
                 value={btn}
                 active={this.props.active}
                 index={idx}
@@ -47,8 +46,8 @@ Section.protoTypes = {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-    buttons: getSquares(state.game, ownProps.sectionId),
-    active: state.game.toPlay === 9 || state.game.toPlay === ownProps.sectionId,
+    buttons: state.game.board.sections[ownProps.sectionId].squares,
+    active: state.game.board.sectionToPlay === 9 || state.game.board.sectionToPlay === ownProps.sectionId,
     player: state.game.isTurnX ? 'X' : "O",
 })
 
